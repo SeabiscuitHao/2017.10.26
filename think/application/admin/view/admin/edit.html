@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/main.css"/>
+    <script type="text/javascript" src="__PUBLIC__/js/libs/modernizr.min.js"></script>
+</head>
+<body>
+  {include file="common/head"}
+<div class="container clearfix">
+  {include file="common/left"}
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{:url('admin/lst')}">管理员管理</a><span class="crumb-step">&gt;</span><span>编辑管理员</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="{:url('admin/edit')}" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                  <input type="hidden" name="id" value="{$admin.id}">
+                    <table class="insert-tab" width="100%" style="margin-top:6%">
+                        <tbody>
+                            <tr style="width:20%">
+                                <th>管理员名称：</th>
+                                <td><input class="common-text" name="admin_name" size="50" value="{$admin.admin_name}" type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>密码：</th>
+                                <td><input class="common-text" name="password" size="50" value="{$admin.password}" type="password"></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody>
+                      </table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>
